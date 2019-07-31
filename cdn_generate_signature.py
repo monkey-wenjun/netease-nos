@@ -1,3 +1,7 @@
+#-*-coding：utf-8-*
+
+# CDN 签名计算以及创建 CDN 加速示例
+
 import datetime
 import hmac, hashlib
 import base64
@@ -15,7 +19,7 @@ def generate_signature(access_key,secret_key,http_verb,content_md5,content_type,
 def create_cdn_domain(access_key,secret_key):
 
     api_url = "http://ncdn-eastchina1.126.net/domain/"
-    http_verb = "POST"  # 根据具体的接口要求填写，例如创建 CDN 这里是需要传 POST 
+    http_verb = "POST"  # 根据具体的接口要求填写，例如创建 CDN 这里是需要传 POST，参考  http://fusion-cdn-api.nos-eastchina1.126.net/api.html
     GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
     gmt_date = datetime.datetime.utcnow().strftime(GMT_FORMAT)  # 当前 GMT 时间
     canonicalized_resource = "/domain/"  # 参考构建CanonicalizedResource的方法，创建加速域名，资源为/domain
