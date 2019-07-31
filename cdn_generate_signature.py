@@ -1,4 +1,4 @@
-#-*-coding：utf-8-*
+# -*-coding:utf-8-*-
 
 # CDN 签名计算以及创建 CDN 加速示例
 
